@@ -17,13 +17,12 @@ def decrypt_m(e_mess):
 
 # Modify wordcount example of native PySpark
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 2:
         print("Usage: wordcount <file>", file=sys.stderr)
         sys.exit(-1)
 
     spark = SparkSession\
         .builder\
-        .master(sys.argv[2])\
         .appName("PythonWordCount")\
         .getOrCreate()
     lines = spark.read.format("text").load(sys.argv[1]).rdd.map(lambda r: r[0])
@@ -37,4 +36,4 @@ if __name__ == "__main__":
     for (word, count) in output:
         print("%s: %i" % (word, count))
 
-spark.stop()
+    spark.stop()
