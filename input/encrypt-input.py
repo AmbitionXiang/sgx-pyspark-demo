@@ -21,7 +21,7 @@ if __name__ == "__main__":
     # encrypt_file('sensitive-input.txt', 'encrypted-sensitive-input.txt')
 
     # logistic regression
-    encrypt_file('lr_small.txt', 'enc-lr_small.txt')
+    encrypt_file('lr_opaque_1062.txt', 'enc-lr_opaque_1062.txt')
 
     # matrix multiplication
     # encrypt_file('mm_opaque_a_100.txt', 'enc-mm_opaque_a_100.txt')
